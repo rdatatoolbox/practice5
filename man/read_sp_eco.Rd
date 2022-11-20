@@ -25,7 +25,7 @@ This function reads the WWF WildFinder \code{csv} file named
 dl_wildfinder_data()
 
 ## Import data ----
-sp_eco <- read_eco_sp(here::here("data", "wildfinder", 
+sp_eco <- read_sp_eco(here::here("data", "wildfinder", 
                                  "wildfinder-ecoregions_species.csv"))
 }
 }

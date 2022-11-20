@@ -1,0 +1,122 @@
+---
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output:
+  html_document:
+    self_contained: true
+    fig_caption: yes
+    theme: united
+    toc: true
+    toc_float:
+      collapsed: true
+params: 
+  mammals_family: "Ursidae"
+---
+
+---
+title: `r paste("World", params$mammals_family, "analysis")`
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo       = TRUE,
+                      eval       = TRUE,
+                      message    = FALSE,
+                      collapse   = TRUE,
+                      fig.width  = 7,
+                      fig.height = 7,
+                      out.width  = "100%",
+                      dpi        = 300
+)
+
+pkgload::load_all()
+```
+
+
+# Data acquisition
+
+```{r 'download-data'}
+## Download data (if required) ----
+
+dl_wildfinder_data()
+```
+
+# Data importation
+
+## Mammals species list
+
+```{r 'read-data-1'}
+## Import species list ----
+
+sp_list  <- read_sp_list(here::here("data", "wildfinder", "wildfinder-mammals_list.csv"))
+```
+
+```{r 'print-data-1', echo=FALSE}
+knitr::kable(head(sp_list), caption = "Content of the wildfinder-mammals_list file")
+```
+
+
+## Ecoregions list
+
+```{r 'read-data-2'}
+## Import ecoregions list ----
+
+eco_list <- read_eco_list(here::here("data", "wildfinder", "wildfinder-ecoregions_list.csv"))
+```
+
+```{r 'print-data-2', echo=FALSE}
+knitr::kable(head(eco_list), caption = "Content of the wildfinder-ecoregions_list file")
+```
+
+
+## Merging table
+
+```{r 'read-data-3'}
+## Import merging table ----
+
+sp_eco   <- read_sp_eco(here::here("data", "wildfinder", "wildfinder-ecoregions_species.csv"))
+```
+
+```{r 'print-data-3', echo=FALSE}
+knitr::kable(head(sp_eco), caption = "Content of the wildfinder-ecoregions_species file")
+```
+
+# Species selection
+
+```{r 'select-species'}
+## Select species ----
+
+sp_list <- select_species(sp_list, family = params$"mammals_family")
+```
+
+```{r 'print-data-4', echo=FALSE}
+knitr::kable(sp_list, caption = paste("List of World", params$"mammals_family", "species"))
+```
+
+# Add ecoregions
+
+```{r 'add-ecoregions'}
+## Add ecoregions to species list ----
+
+sp_eco_list <- add_ecoregions(sp_list, sp_eco, eco_list)
+```
+
+```{r 'print-data-5', echo=FALSE}
+knitr::kable(head(sp_eco_list, 10), caption = paste("Complete dataset for", params$"mammals_family", "species"))
+```
+
+# Count ecoregions
+
+```{r 'count-ecoregions'}
+## Count ecoregions by species ----
+
+counts_data <- count_ecoregions(sp_eco_list)
+```
+
+```{r 'print-data-6', echo=FALSE}
+knitr::kable(counts_data, caption = paste("Number of ecoregions per", params$"mammals_family", "species"))
+```
+
+```{r 'plot-count', out.width='80%', fig.cap=paste("Number of ecoregions per", params$"mammals_family", "species")}
+## Barplot ----
+
+plot_counts(counts_data)
+```

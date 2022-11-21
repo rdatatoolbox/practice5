@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# :mortar_board: Practice 2 - Rmarkdown <img src="https://raw.githubusercontent.com/rdatatoolbox/course-compendium/main/img/compendium-logo.png"  align="right" style="float:right; height:120px;"/>
+# :mortar_board: Practice 3 - Targets <img src="https://raw.githubusercontent.com/rdatatoolbox/course-compendium/main/img/compendium-logo.png"  align="right" style="float:right; height:120px;"/>
 
 <!-- badges: start -->
 
@@ -9,32 +9,29 @@
 GPL-2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 <!-- badges: end -->
 
-Structure of the research compendium of the practice 2 of the workshop
+Structure of the research compendium of the practice 3 of the workshop
 **Data Toolbox for Reproducible Research in Ecology**
-<https://rdatatoolbox.github.io/ex-rmarkdown.html>.
+<https://rdatatoolbox.github.io/ex-targets.html>.
 
 ### Content
 
 This repository is structured as follow:
 
-- [`data/`](https://github.com/rdatatoolbox/practice2/tree/master/data):
+- [`data/`](https://github.com/rdatatoolbox/practice3/tree/master/data):
   contains all raw data required to perform analyses
 
-- [`R/`](https://github.com/rdatatoolbox/practice2/tree/master/R):
+- [`R/`](https://github.com/rdatatoolbox/practice3/tree/master/R):
   contains R functions developed especially for this project
 
-- [`man/`](https://github.com/rdatatoolbox/practice2/tree/master/man):
-  contains help files of R functions
-
-- [`DESCRIPTION`](https://github.com/rdatatoolbox/practice2/tree/master/DESCRIPTION):
+- [`DESCRIPTION`](https://github.com/rdatatoolbox/practice3/tree/master/DESCRIPTION):
   contains project metadata (author, date, dependencies, etc.)
 
-- [`index.Rmd`](https://github.com/rdatatoolbox/practice2/tree/master/index.Rmd):
+- [`index.Rmd`](https://github.com/rdatatoolbox/practice3/tree/master/index.Rmd):
   contains the entire analysis
 
-- [`make.R`](https://github.com/rdatatoolbox/practice2/tree/master/make.R):
+- [`make.R`](https://github.com/rdatatoolbox/practice3/tree/master/make.R):
   main R script to run the entire project by rendering the
-  [`index.Rmd`](https://github.com/rdatatoolbox/practice2/tree/master/index.Rmd)
+  [`index.Rmd`](https://github.com/rdatatoolbox/practice3/tree/master/index.Rmd)
 
 ### Usage
 

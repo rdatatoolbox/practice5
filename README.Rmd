@@ -23,7 +23,7 @@ knitr::opts_chunk$set(collapse  = TRUE,
 
 
 Structure of the research compendium of the practice 2 of the workshop 
-**Data Toolbox for Reproducible Research in Ecology** <https://rdatatoolbox.github.io/ex-rmarkdown.html>
+**Data Toolbox for Reproducible Research in Ecology** <https://rdatatoolbox.github.io/ex-rmarkdown.html>.
 
 
 

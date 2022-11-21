@@ -11,7 +11,7 @@ GPL-2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://chooseal
 
 Structure of the research compendium of the practice 2 of the workshop
 **Data Toolbox for Reproducible Research in Ecology**
-<https://rdatatoolbox.github.io/ex-rmarkdown.html>
+<https://rdatatoolbox.github.io/ex-rmarkdown.html>.
 
 ### Content
 

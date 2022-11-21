@@ -8,3 +8,5 @@
 ^make\.R$
 ^index\.Rmd$
 ^index\.html$
+^README\.Rmd$
+^README\.html$

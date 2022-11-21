@@ -1,4 +1,4 @@
-#' Practice 4 - Renv
+#' Practice 5 - Docker
 #' 
 #' @author Nicolas Casajus \email{nicolas.casajus@fondationbiodiversite.fr}
 #' 

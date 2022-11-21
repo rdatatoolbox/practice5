@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# :mortar_board: Practice 4 - Renv <img src="https://raw.githubusercontent.com/rdatatoolbox/course-compendium/main/img/compendium-logo.png"  align="right" style="float:right; height:120px;"/>
+# :mortar_board: Practice 5 - Renv <img src="https://raw.githubusercontent.com/rdatatoolbox/course-compendium/main/img/compendium-logo.png"  align="right" style="float:right; height:120px;"/>
 
 <!-- badges: start -->
 
@@ -9,7 +9,7 @@
 GPL-2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://choosealicense.com/licenses/gpl-2.0/)
 <!-- badges: end -->
 
-Structure of the research compendium of the practice 4 of the workshop
+Structure of the research compendium of the practice 5 of the workshop
 **Data Toolbox for Reproducible Research in Ecology**
 <https://rdatatoolbox.github.io/ex-targets.html>.
 
@@ -17,22 +17,22 @@ Structure of the research compendium of the practice 4 of the workshop
 
 This repository is structured as follow:
 
-- [`data/`](https://github.com/rdatatoolbox/practice4/tree/master/data):
+- [`data/`](https://github.com/rdatatoolbox/practice5/tree/master/data):
   contains all raw data required to perform analyses
 
-- [`R/`](https://github.com/rdatatoolbox/practice4/tree/master/R):
+- [`R/`](https://github.com/rdatatoolbox/practice5/tree/master/R):
   contains R functions developed especially for this project
 
-- [`DESCRIPTION`](https://github.com/rdatatoolbox/practice4/tree/master/DESCRIPTION):
+- [`DESCRIPTION`](https://github.com/rdatatoolbox/practice5/tree/master/DESCRIPTION):
   contains project metadata (author, date, dependencies, etc.)
 
-- [`_targets.R`](https://github.com/rdatatoolbox/practice4/tree/master/_targets.R):
+- [`_targets.R`](https://github.com/rdatatoolbox/practice5/tree/master/_targets.R):
   contains the pipeline
 
-- [`index.Rmd`](https://github.com/rdatatoolbox/practice4/tree/master/index.Rmd):
+- [`index.Rmd`](https://github.com/rdatatoolbox/practice5/tree/master/index.Rmd):
   contains the final report to knit
 
-- [`make.R`](https://github.com/rdatatoolbox/practice4/tree/master/make.R):
+- [`make.R`](https://github.com/rdatatoolbox/practice5/tree/master/make.R):
   main R script to run the entire project by running
   `targets::tar_make()`
 

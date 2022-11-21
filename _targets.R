@@ -58,7 +58,7 @@ list(
              select_species(sp_list, family = "Ursidae")),
   
   tar_target(ursidae_eco, 
-             join_ecoregions(ursidae_sp, sp_eco, eco_list)),
+             add_ecoregions(ursidae_sp, sp_eco, eco_list)),
   
   
   ## Compute outputs ----

@@ -1,6 +1,6 @@
-Package: practice3
+Package: practice4
 Type: Package
-Title: Practice 3 - Targets
+Title: Practice 4 - Renv
 Version: 0.0.1
 Authors@R: c(
     person(given   = "Nicolas",
@@ -8,11 +8,11 @@ Authors@R: c(
            role    = c("aut", "cre", "cph"),
            email   = "nicolas.casajus@fondationbiodiversite.fr",
            comment = c(ORCID = "0000-0002-5537-5294")))
-Description: Contains the structure of the research compendium of the practice 3
+Description: Contains the structure of the research compendium of the practice 4
     of the workshop 'Data Toolbox for Reproducible Research in Ecology'
     <https://rdatatoolbox.github.io/>.
-URL: https://github.com/rdatatoolbox/practice3
-BugReports: https://github.com/rdatatoolbox/practice3/issues
+URL: https://github.com/rdatatoolbox/practice4
+BugReports: https://github.com/rdatatoolbox/practice4/issues
 License: GPL-2
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

@@ -22,10 +22,10 @@ Imports:
     ggplot2,
     here,
     knitr,
-    pkgload,
     readr,
     remotes,
     rlang,
     rmarkdown,
     stats,
-    utils
+    tarchetypes,
+    targets

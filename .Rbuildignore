@@ -10,3 +10,5 @@
 ^index\.html$
 ^README\.Rmd$
 ^README\.html$
+^_targets\.R$
+^_targets$

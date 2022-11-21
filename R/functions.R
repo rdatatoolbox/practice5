@@ -3,8 +3,6 @@
 #' @description 
 #' This function reads the WWF WildFinder `csv` file named 
 #' `wildfinder-mammals_list.csv` stored in `data/wildfinder/`.
-#'   
-#' **Note:** the function [dl_wildfinder_data()] must have been run first.
 #'
 #' @param file a character of length 1. The path to the csv file.
 #'
@@ -25,8 +23,6 @@ read_sp_list <- function(file) {
 #' @description 
 #' This function reads the WWF WildFinder `csv` file named 
 #' `wildfinder-ecoregions_list.csv` stored in `data/wildfinder/`.
-#'   
-#' **Note:** the function [dl_wildfinder_data()] must have been run first.
 #'
 #' @param file a character of length 1. The path to the csv file.
 #'
@@ -47,8 +43,6 @@ read_eco_list <- function(file) {
 #' @description 
 #' This function reads the WWF WildFinder `csv` file named 
 #' `wildfinder-ecoregions_species.csv` stored in `data/wildfinder/`.
-#'   
-#' **Note:** the function [dl_wildfinder_data()] must have been run first.
 #'
 #' @param file a character of length 1. The path to the csv file.
 #'
@@ -69,8 +63,6 @@ read_sp_eco <- function(file) {
 #' @description 
 #' This function selects all the species of a Mammal family (argument `family`).
 #' `wildfinder-mammals_list.csv` stored in `data/wildfinder/`.
-#'   
-#' **Note:** the function [dl_wildfinder_data()] must have been run first.
 #'
 #' @param x a `tibble` (or `data.frame`). The output of [read_sp_list()].
 #' 

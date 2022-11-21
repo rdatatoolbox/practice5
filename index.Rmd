@@ -1,122 +1,38 @@
 ---
 date: "`r format(Sys.time(), '%Y/%m/%d')`"
-output:
-  html_document:
-    self_contained: true
-    fig_caption: yes
-    theme: united
-    toc: true
-    toc_float:
-      collapsed: true
+output: html_document
 params: 
-  mammals_family: "Ursidae"
+  set_title: ""
 ---
 
 ---
-title: `r paste("World", params$mammals_family, "analysis")`
+title: `r params$set_title`
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo       = TRUE,
-                      eval       = TRUE,
-                      message    = FALSE,
-                      collapse   = TRUE,
-                      fig.width  = 7,
-                      fig.height = 7,
-                      out.width  = "100%",
-                      dpi        = 300
-)
+Lorem ipsum dolor sit amet. Ut ipsa officia sit velit voluptas 33 perferendis dolorum non beatae assumenda. Qui voluptatum facilis sit dolorem explicabo aut nemo molestias ut earum sint qui molestias blanditiis. Ad blanditiis autem eum quos sunt vel enim natus. In galisum ipsum cum saepe sunt in tenetur aperiam.
 
-pkgload::load_all()
+Sed omnis beatae eos delectus velit et atque blanditiis cum architecto dolor et molestiae quam eum mollitia veritatis ea nobis animi. Est sint aliquid eum omnis quas sed suscipit nesciunt sit reprehenderit consequatur sed veniam illo. Ea exercitationem pariatur 33 quae nemo eum eius quasi aut dolorem porro 33 dolorem facere?
+
+
+
+```{r echo=FALSE}
+n_ecoregions_by_sp <- tar_read(n_ecoregions_by_sp)
+selected_sp <- tar_read(selected_sp)
+
+knitr::kable(n_ecoregions_by_sp, 
+             caption = paste("Table 1: Number of ecoregions per", 
+                             unique(selected_sp$"family"), "species"))
 ```
 
+Lorem ipsum dolor sit amet. Ut ipsa officia sit velit voluptas 33 perferendis dolorum non beatae assumenda. Qui voluptatum facilis sit dolorem explicabo aut nemo molestias ut earum sint qui molestias blanditiis. Ad blanditiis autem eum quos sunt vel enim natus. In galisum ipsum cum saepe sunt in tenetur aperiam.
 
-# Data acquisition
 
-```{r 'download-data'}
-## Download data (if required) ----
-
-dl_wildfinder_data()
+```{r echo=FALSE, out.width='80%', fig.cap=paste("Figure 1: Number of ecoregions per", unique(selected_sp$"family"), "species")}
+tar_load(n_ecoregions_plot_png)
+knitr::include_graphics(n_ecoregions_plot_png)
 ```
 
-# Data importation
+Lorem ipsum dolor sit amet. Ut ipsa officia sit velit voluptas 33 perferendis dolorum non beatae assumenda. Qui voluptatum facilis sit dolorem explicabo aut nemo molestias ut earum sint qui molestias blanditiis. Ad blanditiis autem eum quos sunt vel enim natus. In galisum ipsum cum saepe sunt in tenetur aperiam.
 
-## Mammals species list
+**Data source:** World Wildlife Fund (2006) WildFinder: Online database of species distributions. Version Jan-06. URL: <https://www.worldwildlife.org/pages/wildfinder-database>.
 
-```{r 'read-data-1'}
-## Import species list ----
-
-sp_list  <- read_sp_list(here::here("data", "wildfinder", "wildfinder-mammals_list.csv"))
-```
-
-```{r 'print-data-1', echo=FALSE}
-knitr::kable(head(sp_list), caption = "Content of the wildfinder-mammals_list file")
-```
-
-
-## Ecoregions list
-
-```{r 'read-data-2'}
-## Import ecoregions list ----
-
-eco_list <- read_eco_list(here::here("data", "wildfinder", "wildfinder-ecoregions_list.csv"))
-```
-
-```{r 'print-data-2', echo=FALSE}
-knitr::kable(head(eco_list), caption = "Content of the wildfinder-ecoregions_list file")
-```
-
-
-## Merging table
-
-```{r 'read-data-3'}
-## Import merging table ----
-
-sp_eco   <- read_sp_eco(here::here("data", "wildfinder", "wildfinder-ecoregions_species.csv"))
-```
-
-```{r 'print-data-3', echo=FALSE}
-knitr::kable(head(sp_eco), caption = "Content of the wildfinder-ecoregions_species file")
-```
-
-# Species selection
-
-```{r 'select-species'}
-## Select species ----
-
-sp_list <- select_species(sp_list, family = params$"mammals_family")
-```
-
-```{r 'print-data-4', echo=FALSE}
-knitr::kable(sp_list, caption = paste("List of World", params$"mammals_family", "species"))
-```
-
-# Add ecoregions
-
-```{r 'add-ecoregions'}
-## Add ecoregions to species list ----
-
-sp_eco_list <- add_ecoregions(sp_list, sp_eco, eco_list)
-```
-
-```{r 'print-data-5', echo=FALSE}
-knitr::kable(head(sp_eco_list, 10), caption = paste("Complete dataset for", params$"mammals_family", "species"))
-```
-
-# Count ecoregions
-
-```{r 'count-ecoregions'}
-## Count ecoregions by species ----
-
-counts_data <- count_ecoregions(sp_eco_list)
-```
-
-```{r 'print-data-6', echo=FALSE}
-knitr::kable(counts_data, caption = paste("Number of ecoregions per", params$"mammals_family", "species"))
-```
-
-```{r 'plot-count', out.width='80%', fig.cap=paste("Number of ecoregions per", params$"mammals_family", "species")}
-## Barplot ----
-
-plot_counts(counts_data)
-```

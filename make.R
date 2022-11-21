@@ -11,11 +11,6 @@
 remotes::install_deps(upgrade = "never")
 
 
-## Load Project R Functions ----
-
-source(here::here("R", "functions.R"))
-
-
 ## Create subfolders ----
 
 dir.create(here::here("data", "wildfinder"), 

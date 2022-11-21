@@ -114,7 +114,7 @@ select_species <- function(x, family = NULL) {
   ## Select columns ----
   
   x |>
-    dplyr::select(.data$species_id, .data$sci_name, .data$family)
+    dplyr::select("species_id", "sci_name", "family")
 }
 
 
@@ -134,7 +134,6 @@ select_species <- function(x, family = NULL) {
 #' @return A `tibble` with the following two columns: `sci_name` and 
 #' `ecoregion`.
 #' 
-#' @importFrom rlang .data
 #' @export
 
 add_ecoregions <- function(x, y, z) {
@@ -168,7 +167,7 @@ add_ecoregions <- function(x, y, z) {
   x |>
     dplyr::left_join(y, by = "species_id") |>
     dplyr::left_join(z, by = "ecoregion_id") |>
-    dplyr::select(.data$sci_name, .data$ecoregion)
+    dplyr::select("sci_name", "ecoregion")
 }
 
 

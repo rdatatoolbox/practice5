@@ -9,6 +9,17 @@
 
 library(targets)
 library(tarchetypes)
+library(ggplot2)
+
+
+## Select Mammals family ----
+
+options("mammals_family" = "Ursidae")
+
+
+## Load Project R Functions ----
+
+source(here::here("R", "functions.R"))
 
 
 ## Analyses pipeline ----
@@ -54,17 +65,17 @@ list(
   
   ## Prepare data ----
   
-  tar_target(ursidae_sp, 
-             select_species(sp_list, family = "Ursidae")),
+  tar_target(selected_sp, 
+             select_species(sp_list, family = options()$"mammals_family")),
   
-  tar_target(ursidae_eco, 
-             add_ecoregions(ursidae_sp, sp_eco, eco_list)),
+  tar_target(selected_sp_w_eco, 
+             add_ecoregions(selected_sp, sp_eco, eco_list)),
   
   
   ## Compute outputs ----
   
   tar_target(n_ecoregions_by_sp, 
-             count_ecoregions(ursidae_eco_rename)),
+             count_ecoregions(selected_sp_w_eco)),
   
   tar_target(n_ecoregions_plot, 
              plot_counts(n_ecoregions_by_sp)),
@@ -78,5 +89,5 @@ list(
   ## Create report ----
   
   tar_render(report, "index.Rmd", 
-             params = list(set_title = unique(ursidae_sp$"family")))
+             params = list(set_title = options()$"mammals_family"))
 )

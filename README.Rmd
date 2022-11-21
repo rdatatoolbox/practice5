@@ -40,11 +40,14 @@ contains R functions developed especially for this project
 - [`DESCRIPTION`](https://github.com/rdatatoolbox/practice3/tree/master/DESCRIPTION):
 contains project metadata (author, date, dependencies, etc.)
 
+- [`_targets.R`](https://github.com/rdatatoolbox/practice3/tree/master/_targets.R):
+contains the pipeline
+
 - [`index.Rmd`](https://github.com/rdatatoolbox/practice3/tree/master/index.Rmd):
-contains the entire analysis
+contains the final report to knit
 
 - [`make.R`](https://github.com/rdatatoolbox/practice3/tree/master/make.R):
-main R script to run the entire project by rendering the [`index.Rmd`](https://github.com/rdatatoolbox/practice3/tree/master/index.Rmd)
+main R script to run the entire project by running `targets::tar_make()`
 
 
 

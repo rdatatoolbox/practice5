@@ -5,18 +5,6 @@
 #' @date 2022/11/21
 
 
-
-## Install Dependencies (listed in DESCRIPTION) ----
-
-if (!("renv" %in% installed.packages())) {
-  install.packages("renv")
-}
-
-
-renv::activate()
-renv::restore()
-
-
 ## Create subfolders ----
 
 dir.create(here::here("data", "wildfinder"), 

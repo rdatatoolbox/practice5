@@ -1,16 +1,14 @@
 ## Based on the image RStudio with R 4.2.2 ----
 
-FROM rocker/rstudio:4.2.2
+FROM rocker/verse:4.2.2
 
 MAINTAINER Nicolas Casajus <nicolas.casajus@fondationbiodiversite.fr>
 
 
-## Install system dependencies ----
+## Update system dependencies ----
 
 RUN sudo apt update -yq \
- && sudo apt install --no-install-recommends libxml2-dev -yq \
- && sudo apt clean all \
- && sudo apt purge \
+ && sudo apt clean all && sudo apt purge \
  && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 

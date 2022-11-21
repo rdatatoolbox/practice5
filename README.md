@@ -49,7 +49,7 @@ docker build -t "practice5" .
 - Start a container based on this image:
 
 ``` sh
-docker run --rm -p 127.0.0.1:8787:8787 -e DISABLE_AUTH=true practice5
+docker run --rm -dp 8787:8787 -e DISABLE_AUTH=true practice5
 ```
 
 - On a web browser enter this URL: `127.0.0.1:8787`. A new RStudio

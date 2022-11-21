@@ -1,8 +1,8 @@
-#' Practice 2 - Research Compendium & Rmarkdown
+#' Practice 3 - Targets
 #' 
 #' @author Nicolas Casajus \email{nicolas.casajus@fondationbiodiversite.fr}
 #' 
-#' @date 2022/11/20
+#' @date 2022/11/21
 
 
 
@@ -11,12 +11,19 @@
 remotes::install_deps(upgrade = "never")
 
 
-## Load Project Addins (R Functions and Packages) ----
+## Load Project R Functions ----
 
-pkgload::load_all(here::here())
+source(here::here("R", "functions.R"))
+
+
+## Create subfolders ----
+
+dir.create(here::here("data", "wildfinder"), 
+           showWarnings = FALSE, recursive = TRUE)
+dir.create(here::here("figures"), 
+           showWarnings = FALSE)
 
 
 ## Run Project ----
 
-rmarkdown::render(here::here("index.Rmd"), 
-                  params = list(mammals_family = "Ursidae"))
+targets::tar_make()

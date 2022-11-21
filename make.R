@@ -8,7 +8,13 @@
 
 ## Install Dependencies (listed in DESCRIPTION) ----
 
-remotes::install_deps(upgrade = "never")
+if (!("renv" %in% installed.packages())) {
+  install.packages("renv")
+}
+
+
+renv::activate()
+renv::restore()
 
 
 ## Create subfolders ----

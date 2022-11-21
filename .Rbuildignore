@@ -1,3 +1,5 @@
+^renv$
+^renv\.lock$
 ^LICENSE\.md$
 ^data$
 ^outputs$
@@ -12,3 +14,4 @@
 ^README\.html$
 ^_targets\.R$
 ^_targets$
+^\.Rprofile$

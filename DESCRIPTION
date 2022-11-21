@@ -24,6 +24,7 @@ Imports:
     knitr,
     readr,
     remotes,
+    renv,
     rlang,
     rmarkdown,
     stats,

@@ -15,3 +15,5 @@
 ^_targets\.R$
 ^_targets$
 ^\.Rprofile$
+^Dockerfile$
+^\.dockerignore$

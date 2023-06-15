@@ -14,7 +14,7 @@ knitr::opts_chunk$set(collapse  = TRUE,
 
 
 
-## :mortar_board: Practice 5 - Renv
+## :mortar_board: Practice 5 - Renv & Docker
 
 
 <!-- badges: start -->

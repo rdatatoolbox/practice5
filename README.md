@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-## :mortar_board: Practice 5 - Renv
+## :mortar_board: Practice 5 - Renv & Docker
 
 <!-- badges: start -->
 
